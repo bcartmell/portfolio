@@ -1,0 +1,128 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 2em;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+main {
+  /* padding: 6em 0; */
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 1em;
+}
+
+/*
+ * Skeleton Overrides
+ */
+.container {
+  width: 90%;
+}
+
+/*
+ * Utility Classes
+ */
+.text-center {
+  text-align: center;
+}
+
+.block {
+  display: block;
+  width: 100%;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/*
+ * Style broken images
+ */
+img {
+  position: relative;
+}
+
+img:before {
+  content: '\f1c5' ' ' attr(alt);
+  display: inline-block;
+  font-family: 'FontAwesome';
+  box-sizing: border-box;
+  background: #ccc;
+  font-weight: bold;
+  line-height: 1.6em;
+  height: 100%;
+  width: 100%;
+  padding-top: 30%;
+  position: absolute;
+    top: 0;
+    left: 0;
+  vertical-align: baseline;
+}
+
+/*
+ * Forms
+ */
+input,
+textarea {
+  margin-bottom: 1.3em;
+  width: 100%;
+}
+
+input.error,
+textarea.error {
+  border: 1px solid #b52025;
+}
+
+label.error {
+  color: #b52025;
+  margin-top: -1.3em;
+}
+
+
+label.error {
+}
+
+/*
+ * Special Effects
+ */
+.parallax-container {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax-layer {
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.parallax-layer-1 {
+  transform: translateZ(0);
+}
+
+.parallax-layer-2 {
+  transform: translateZ(-1px);
+}
+
+/*
+ * Media Queries
+ */
+@media screen and (min-width:768) {
+  label {
+    display: block;
+  }
+}

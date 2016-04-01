@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', href='/stylesheets/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton.css')
+    style(type='riot')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header.u-full-width
+      main-nav
+
+
+    main
+      block content
+
+    footer
+      sticky-footer.u-full-width
+        .row
+          .twelve.columns.u-pull-right
+            footer-links
+
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/jquery.validate.js')
+    script(src='/javascripts/riot.js')
+    script(src='/tags/main-nav.tag', type='riot/tag')
+    script(src='/tags/sticky-footer.tag' type='riot/tag')
+    script(src='/tags/footer-links.tag' type='riot/tag')
+    script(src='/javascripts/index.js')

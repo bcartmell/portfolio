@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .container
+    h1=name
+    p=description
+
+    image-reel
+      each imgSrc in images
+        img(src='/images/thumbs/'+ imgSrc)
+
+  script(src='/tags/image-reel.tag', type='riot/tag')
