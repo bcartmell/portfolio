@@ -6,12 +6,13 @@
       <h2>Front-end Web Developer</h2>
     </div>
     <p>
-    I&#39;m a front-end web developer who likes to work hard and play 
-    hard. I hav a passion for building and fine-tuning
-    accessible, user-friendly, and performant interfaces. 
+    I&#39;m a well seasoned front-end web developer with
+    a passion for building and fine-tuning accessible, user-friendly,
+    and performant interfaces. 
     I love learning and applying new technologies and techniques to 
     solve hard and interesting problems.
     </p>
+
   </div>
 
   <script>
