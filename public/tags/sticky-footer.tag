@@ -16,6 +16,7 @@
         }
       }
       stickyFooterCalc();
+      $('img').load(stickyFooterCalc);
       $(window).resize(stickyFooterCalc);
     });
   </script>
