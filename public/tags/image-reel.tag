@@ -72,6 +72,7 @@
     }
 
     image-reel img {
+      cursor: pointer;
       display: inline-block;
       max-height: 244px;
       max-width: 100%;
