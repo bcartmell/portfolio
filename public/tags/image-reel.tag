@@ -3,6 +3,50 @@
     <yield/>
   </div>
 
+  <script>
+    this.on('mount', function() {
+      var reel = this.root;
+
+      // create on object to keep track of the container element and each image.
+      var reelObj =  {
+        element: reel,
+        images: [].filter.call(reel.childNodes[0].childNodes, function(node) {
+          return node instanceof Element;
+        })
+      };
+
+      // use okiePub to make our new object a publisher
+      okiePub.makePublisher(reelObj);
+
+      // on click event fire an 'imgClick' event via okiePub functionality
+      // the event will include the index of the of thumbnail that was clicked.
+      reel.addEventListener('click', function(event) {
+        reelObj.fire('imgClick', [].indexOf.call(reelObj.images, event.target));
+      });
+
+      // create the okieShow object and save it in our tracking object
+      reelObj.targetShow = new OkieShow();
+
+      // Clone the thumbnail into a new slide on the OkieShow instance.
+      reelObj.images.forEach(function(image) {
+        var slideContent = image.cloneNode(false);
+        reelObj.targetShow.addSlide(slideContent);
+      });
+
+      // the slideshow can be loaded in a modal
+      reelObj.modal = okieModal.newModal({
+        content: reelObj.targetShow
+      });
+
+      // add subscriptions to to the 'imgClick' event
+      // which is fired when a thumbnail is clicked.  
+      // one subcription to navigate the slideshow to the correct image.
+      // and onother to open the modal.
+      reelObj.on('imgClick', reelObj.targetShow.toSlide, reelObj.targetShow);
+      reelObj.on('imgClick', reelObj.modal.show, reelObj.modal);
+    });
+  </script>
+
 
   <style>
     image-reel {
