@@ -99,22 +99,22 @@
   --><grid-panel data-img-src="/images/grid-panel-astro.png" data-project-name="Astro Gaming" data-bg-color="#000" data-font-color="#fff" data-project-description="Product Registration Portal and Private store" data-tech="Product Registration, Persistent Portal, eCommerce" data-link-color="#FF3300" data-project-url="/project-details/astro">
   </grid-panel><!--
 
-  --><grid-panel data-img-src="/images/grid-panel-motili.png" data-project-name="Motili" data-project-description="Professional Services Portal for Motili Contractors" data-project-url="/project-details/motili" data-bg-color="#3b2416" data-font-color="#F6F6F6" data-tech="Services Scheduling, eCommerce, Persistent Portal, Dynamic Data Tables, Work-order management, Responsive Layout">
+  --><grid-panel data-img-src="/images/grid-panel-motili.png" data-project-name="Motili" data-project-description="Professional Services Portal for Motili Contractors" data-project-url="/project-details/motili" data-bg-color="#3b2416" data-font-color="#F6F6F6" data-link-color="#3794D8" data-tech="Services Scheduling, eCommerce, Persistent Portal, Dynamic Data Tables, Work-order management, Responsive Layout">
   </grid-panel><!--
 
   --><grid-panel data-img-src="/images/grid-panel-backtrack.png" data-project-name="BackTrack GPS" data-tech="Product registration, support portal" data-bg-color="#2C2C2C" data-font-color="#fff" data-link-color="#b52025" data-project-url="/project-details/dtour" data-project-description="User support portal for BackTrack DTOUR GPS">
   </grid-panel><!--
 
-  --><grid-panel data-img-src="/images/grid-panel-swash.png" data-project-name="Whirlpool Swash" data-project-description="Registriation portal for Whirlpool Swash products" data-tech="Product registration, Photoregister" data-project-url="/project-details/swash" data-bg-color="#ff6a00" data-font-color="#fff">
+  --><grid-panel data-img-src="/images/grid-panel-swash.png" data-project-name="Whirlpool Swash" data-project-description="Registriation portal for Whirlpool Swash products" data-tech="Product registration, Photoregister" data-project-url="/project-details/swash" data-bg-color="#ff6a00" data-font-color="#fff" data-link-color="#2B2B28">
   </grid-panel><!--
 
-  --><grid-panel data-img-src="/images/grid-panel-bushnell.png" data-project-name="Bushnell" data-bg-color="#cd5a13" data-font-color="#fff" data-project-description="Bushnell Outdoor Products registration portal" data-tech="Product registration, support portal, eCommerce" data-project-url="/project-details/bushnell">
+  --><grid-panel data-img-src="/images/grid-panel-bushnell.png" data-project-name="Bushnell" data-bg-color="#cd5a13" data-font-color="#fff" data-link-color="#3F2F16" data-project-description="Bushnell Outdoor Products registration portal" data-tech="Product registration, support portal, eCommerce" data-project-url="/project-details/bushnell">
   </grid-panel><!--
   
   --><grid-panel data-img-src="/images/grid-panel-ferguson-crest.png" data-project-name="Ferguson Crest" data-bg-color="#B29E6B" data-font-color="#000" data-link-color="#000" data-project-description="Ferguson Crest Wine Shop" data-project-url="/project-details/ferguson" data-tech="Marketing, persistent portal, wine club, promotions, ecommerce">
   </grid-panel><!--
 
-  --><grid-panel data-img-src="/images/grid-panel-icon.png" data-project-name="Icon Fitness" data-bg-color="#ED1B2D" data-font-color="#fff" data-project-description="Mult-brand registration portal for Icon Fitness products" data-tech="Multi-theme, eCommerce, Persistent portal, marketing promotions" data-project-url="/project-details/icon">
+  --><grid-panel data-img-src="/images/grid-panel-icon.png" data-project-name="Icon Fitness" data-bg-color="#ED1B2D" data-font-color="#fff" data-link-color="#0f0f0f" data-project-description="Mult-brand registration portal for Icon Fitness products" data-tech="Multi-theme, eCommerce, Persistent portal, marketing promotions" data-project-url="/project-details/icon">
   </grid-panel>
 
 </work-grid>
