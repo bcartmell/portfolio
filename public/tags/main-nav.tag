@@ -1,5 +1,8 @@
 <main-nav>
   <nav class="u-full-width">
+    <a href="/" id="logo">
+      <img src="/images/logo.png" alt="Brady Cartmell">
+    </a>
     <button id="show-nav-button">
       <i class="fa fa-navicon"></i>
     </button>
@@ -49,6 +52,11 @@
       display: block;
       height: 3.8em;
     } 
+
+    main-nav #logo {
+      display: inline-block;
+      margin: 1em 0 0 1em;
+    }
 
     main-nav .nav-menu {
       display: none;
