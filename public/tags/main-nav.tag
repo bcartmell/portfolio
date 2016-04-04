@@ -95,6 +95,7 @@
     @media screen and (min-width: 768px) {
       main-nav .nav-menu {
         display: block !important;
+        flot: right;
       }
 
       .nav-menu li {
