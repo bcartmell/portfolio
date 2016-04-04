@@ -6,7 +6,7 @@
     <button id="show-nav-button">
       <i class="fa fa-navicon"></i>
     </button>
-    <ul class="nav-menu u-cf u-full-width">
+    <ul class="nav-menu u-cf">
       <li><a href="/">Home</a></li>
       <li><a href="/project-details">Past Work</a></li>
       <li><a href="http://resume.bcartmell.online" target="_blank">Resume</a></li>
@@ -95,7 +95,7 @@
     @media screen and (min-width: 768px) {
       main-nav .nav-menu {
         display: block !important;
-        flot: right;
+        float: right;
       }
 
       .nav-menu li {
