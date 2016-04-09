@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .container
+    h1 Render Stl Models
+    p Loads an Stl file from the server and renders it via THREE.js
+
+    render-stl
+
+  script(src='/javascripts/three.min.js')
+  script(src='/javascripts/renderMesh.js')
+  script(src='/tags/render-stl.tag', type='riot/tag')

@@ -1,7 +1,10 @@
+'use strict';
 const express = require('express');
 const nodemailer = require('nodemailer');
 const emailSettings = require('../email-settings');
 const projects = require('../models/past-work');
+const parseStl = require('osatt-parse-stl');
+const fs = require('fs');
 const router = new express.Router();
 
 /* GET home page. */
@@ -32,6 +35,29 @@ router.get('/message-sent', (req, res) => {
   res.render('message-sent', { title: 'Brady Cartmell | Message Sent' });
 });
 
+
+router.get('/render-stl', (req, res) => {
+  res.render('render-stl', { title: 'Brady Cartmell | Message Sent' });
+});
+
+
+router.get('/stlModel/*', (req, res) => {
+  const urlArr = req.originalUrl.split('/');
+  let modelName = urlArr[urlArr.length - 1];
+  const modelType = modelName.slice(modelName.lastIndexOf('.'));
+  modelName = modelName.slice(0, -modelType.length);
+
+  const modelsDir = __dirname.split('/').slice(0, -1).join('/') + '/public/CAD/';
+
+  const modelPath = modelsDir + modelName + '/' + modelName + modelType;
+
+  fs.readFile(modelPath, (err, data) => {
+    if (err) throw err;
+    console.log('file found');
+    res.send(JSON.stringify(parseStl(data)));
+  });
+});
+
 router.post('/contact', (req, res) => {
   const transporter = nodemailer.createTransport(emailSettings.serverSettings);
   const mailOptions = {
@@ -51,4 +77,3 @@ router.post('/contact', (req, res) => {
 });
 
 module.exports = router;
-

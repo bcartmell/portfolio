@@ -27,9 +27,11 @@
     "okie-modal": "^1.0.0",
     "okie-pub": "^1.0.0",
     "okie-show": "^1.0.0",
+    "osatt-parse-stl": "^1.0.0",
     "riot": "^2.3.17",
     "serve-favicon": "~2.3.0",
     "skeleton-css": "^2.0.4",
+    "three": "^0.75.0",
     "webpack": "^1.12.14"
   },
   "eslintconfig": {

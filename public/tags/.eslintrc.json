@@ -1,0 +1,9 @@
+{
+  "plugins": ["riot"],
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 5
+  }
+}
