@@ -14,6 +14,18 @@ renderMesh = (function() {
   renderer.setSize(600, 400);
   renderer.setClearColor(0x90C3D4);
 
+  camera.position.z = 12;
+  camera.lookAt(scene.position);
+
+  addLight({ x: 0, y: 15, z: 15 });
+  addLight({ x: 15, y: -15, z: 15 });
+  addLight({ x: -15, y: -15, z: 15 });
+
+  addLight({ x: 15, y: 15, z: -15 });
+  addLight({ x: 0, y: -15, z: -15 });
+  addLight({ x: -15, y: 15, z: -15 });
+
+
   function makeBufferGeometry(verticesArr) {
     var geometry = new THREE.BufferGeometry();
     var vertices = new Float32Array(verticesArr.length * 3);
@@ -32,9 +44,6 @@ renderMesh = (function() {
     return geometry;
   }
 
-  camera.position.z = 12;
-  camera.lookAt(scene.position);
-
   function addLight(position) {
     var light = new THREE.PointLight(0x777777);
     light.position.x = position.x;
@@ -43,14 +52,6 @@ renderMesh = (function() {
     scene.add(light);
     // debugger;
   }
-  addLight({ x: 0, y: 15, z: 15 });
-  addLight({ x: 15, y: -15, z: 15 });
-  addLight({ x: -15, y: -15, z: 15 });
-
-  addLight({ x: 15, y: 15, z: -15 });
-  addLight({ x: 0, y: -15, z: -15 });
-  addLight({ x: -15, y: 15, z: -15 });
-
   function render() {
     requestAnimationFrame(render);
     renderer.render(scene, camera);
