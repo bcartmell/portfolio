@@ -6,11 +6,12 @@
       <h2>Front-end Web Developer</h2>
     </div>
     <p>
-    I&#39;m a well seasoned front-end web developer with
-    a passion for building and fine-tuning accessible, user-friendly,
-    and performant interfaces. 
-    I love learning and applying new technologies and techniques to 
-    solve hard and interesting problems.
+      I&#39;m an experienced front-end web developer with a strong work ethic
+      and a passion for building and fine-tuning accessible, user-friendly,
+      and performant interfaces.  I love learning and applying new technologies
+      and techniques to solve hard and interesting problems.  I also have a solid
+      understanding of business concerns and know when optimization provides 
+      real benefits and when it becomes an exersize in theory.
     </p>
 
   </div>
@@ -20,7 +21,7 @@
       window.addEventListener('scroll', function(event) {
         $(this.root).css(
           'background-position',
-          'center ' + -(window.pageYOffset*.3) + 'px'
+          'center ' + -(window.pageYOffset*.2) + 'px'
         );
       }.bind(this), false);
     });
