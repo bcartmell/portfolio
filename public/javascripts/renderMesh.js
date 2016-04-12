@@ -1,30 +1,46 @@
-renderMesh = (function() {
-  // var OrbitControls = require('three-orbit-controls')(THREE);
+renderMesh = function(meshArr, $parentElement) {
+
+  var renderWidth = $parentElement.innerWidth();
 
   var renderer = new THREE.WebGLRenderer();
+
   var scene = new THREE.Scene();
-  var camera = new THREE.PerspectiveCamera(75, 600 / 400, 0.1, 1000);
+
+  var camera = new THREE.PerspectiveCamera(75, 1.618, 0.1, 1000);
+
+  var controls = new THREE.OrbitControls( camera, renderer.domElement );
+  controls.enableDamping = true;
+  controls.dampingFactor = 1.5;
+  controls.enableZoom = false;
+
   var material = new THREE.MeshLambertMaterial({ wireframe: false, color: 0x00ff00 });
   material.side = THREE.DoubleSide;
 
-  // var controls = new OrbitControls(camera); // eslint-disable-line no-unused-vars
+  var geometry = makeBufferGeometry(meshArr);
+  var model = new THREE.Mesh(geometry, material);
+  var maxPos = findMaxValue(meshArr);
 
   scene.add(new THREE.AmbientLight(0x333333));
 
-  renderer.setSize(600, 400);
+  renderer.setSize(renderWidth, renderWidth/1.618);
   renderer.setClearColor(0x90C3D4);
 
-  camera.position.z = 12;
+  camera.position.z = maxPos*1.5;
   camera.lookAt(scene.position);
 
-  addLight({ x: 0, y: 15, z: 15 });
-  addLight({ x: 15, y: -15, z: 15 });
-  addLight({ x: -15, y: -15, z: 15 });
+  addLight({ x: 0, y: maxPos*2, z: maxPos*2 });
+  addLight({ x: maxPos*2, y: -maxPos*2, z: maxPos*2 });
+  addLight({ x: -maxPos*2, y: -maxPos*2, z: maxPos*2 });
 
-  addLight({ x: 15, y: 15, z: -15 });
-  addLight({ x: 0, y: -15, z: -15 });
-  addLight({ x: -15, y: 15, z: -15 });
+  addLight({ x: maxPos*2, y: maxPos*2, z: -maxPos*2 });
+  addLight({ x: 0, y: -maxPos*2, z: -maxPos*2 });
+  addLight({ x: -maxPos*2, y: maxPos*2, z: -maxPos*2 });
 
+  camera.lookAt(scene.position);
+
+  $parentElement.append(renderer.domElement);
+  scene.add(model);
+  render();
 
   function makeBufferGeometry(verticesArr) {
     var geometry = new THREE.BufferGeometry();
@@ -83,39 +99,4 @@ renderMesh = (function() {
       }
     }
   }
-
-  function setCameraDistance(camera, distance) {
-    camera.position.x = distance;
-    camera.position.y = distance;
-    camera.position.z = distance;
-  }
-
-  function addModel(modelArr, parentElement) {
-    var material = new THREE.MeshLambertMaterial({ wireframe: false, color: 0x00ff00 });
-    material.side = THREE.DoubleSide;
-    var geometry = makeBufferGeometry(modelArr);
-    var maxPos = findMaxValue(modelArr) + 20;
-    var model = new THREE.Mesh(geometry, material);
-    var i;
-
-    setCameraDistance(camera, maxPos);
-    camera.lookAt(scene.position);
-
-    for (i = 0; i < scene.children.length; i++) {
-      if (scene.children[i] instanceof THREE.PointLight) {
-        setDistance(scene.children[i], maxPos);
-      }
-    }
-
-    parentElement.appendChild(renderer.domElement);
-    scene.add(model);
-    render();
-  }
-
-  return {
-    addModel: addModel,
-    setCameraZ: function (cameraZ) {
-      camera.position.z = cameraZ;
-    },
-  };
-}());
+}
