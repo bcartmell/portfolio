@@ -37,7 +37,7 @@ router.get('/message-sent', (req, res) => {
 
 
 router.get('/render-stl', (req, res) => {
-  res.render('render-stl', { title: 'Brady Cartmell | Message Sent' });
+  res.render('render-stl', { title: 'Brady Cartmell | Render Stl' });
 });
 
 
@@ -48,14 +48,18 @@ router.get('/stlModel/*', (req, res) => {
   modelName = modelName.slice(0, -modelType.length);
 
   const modelsDir = __dirname.split('/').slice(0, -1).join('/') + '/public/CAD/';
-
   const modelPath = modelsDir + modelName + '/' + modelName + modelType;
 
-  fs.readFile(modelPath, (err, data) => {
-    if (err) throw err;
-    console.log('file found');
-    res.send(JSON.stringify(parseStl(data)));
+  parseStl(modelPath, (err, mesh) => {
+    if (err) res.send('something went wrong');
+    else res.send(mesh);
   });
+
+  // fs.readFile(modelPath, (err, data) => {
+    // if (err) throw err;
+    // console.log('file found');
+    // res.send(JSON.stringify(parseStl(data)));
+  // });
 });
 
 router.post('/contact', (req, res) => {
