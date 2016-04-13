@@ -25,6 +25,7 @@
     render-stl {
       background: #474747;
       display: block;
+      margin-bottom: 4em;
     }
 
     render-stl canvas {
