@@ -3,10 +3,9 @@
   <script>
     this.on('mount', function() {
       var request = new XMLHttpRequest();
-      var self = this;
       request.open('GET', '/stlModel/UtahHR.stl');
-      request.addEventListener('load', function() {
-        renderMesh(JSON.parse(request.responseText), $(self.root));
+      request.addEventListener('load', () => {
+        renderMesh(JSON.parse(request.responseText), $(this.root));
       });
       request.send();
     });
