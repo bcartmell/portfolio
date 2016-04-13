@@ -27,7 +27,7 @@
     "okie-modal": "^1.0.0",
     "okie-pub": "^1.0.0",
     "okie-show": "^1.0.0",
-    "osatt-parse-stl": "^1.0.0",
+    "osatt-parse-stl": "^2.0.1",
     "riot": "^2.3.17",
     "serve-favicon": "~2.3.0",
     "skeleton-css": "^2.0.4",

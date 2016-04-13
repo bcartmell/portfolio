@@ -23,6 +23,20 @@
       if ('ontouchstart' in window) {
         $(this.root).on('click', '.panel-card', activatePanel);
       }
+
+      function toggleBackface($element) {
+        var transDuration = okieHelpers.getTransDuration($element[0]);
+        var $face = $element.find('.card-face');
+        setTimeout(function() {
+          if ($element.is(':hover')) $face.addClass('backface-visible');
+          else $face.removeClass('backface-visible');
+        }, transDuration);
+      }
+
+      // For benefit of IE
+      $(this.root).hover(function() {
+        toggleBackface($(this));
+      });
     })
   </script>
   
@@ -70,6 +84,11 @@
       backface-visibility: hidden;
     }
 
+    grid-panel .card-face.backface-visible {
+      -webkit-backface-visibility: visible;
+      backface-visibility: visible;
+    }
+
     grid-panel .card-back {
       background: #ccc;
       box-shadow: 2px 0 12px 0 #000;
@@ -86,7 +105,7 @@
 
     grid-panel:hover>.panel-card,
     grid-panel.active>.panel-card {
-      transform: rotate3d(0, 1, 0, 180deg) scale3d(1.2, 1.2, 1.2);
+      transform: rotateY(180deg) scale(1.2);
     }
   </style>
 
