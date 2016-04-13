@@ -22,6 +22,11 @@
     this.on('mount', function() {
       if ('ontouchstart' in window) {
         $(this.root).on('click', '.panel-card', activatePanel);
+      } else {
+        // For benefit of IE
+        $(this.root).hover(function() {
+          toggleBackface($(this));
+        });
       }
 
       function toggleBackface($element) {
@@ -33,10 +38,6 @@
         }, transDuration);
       }
 
-      // For benefit of IE
-      $(this.root).hover(function() {
-        toggleBackface($(this));
-      });
     })
   </script>
   
