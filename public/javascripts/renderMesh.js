@@ -1,12 +1,13 @@
 renderMesh = function(meshArr, $parentElement) {
 
   var renderWidth = $parentElement.innerWidth();
+  var renderHeight = $parentElement.innerHeight();
 
   var renderer = new THREE.WebGLRenderer();
 
   var scene = new THREE.Scene();
 
-  var camera = new THREE.PerspectiveCamera(75, 1.618, 0.1, 1000);
+  var camera = new THREE.PerspectiveCamera(75, renderWidth / renderHeight, 0.1, 1000);
 
   var controls = new THREE.OrbitControls( camera, renderer.domElement );
   controls.enableDamping = true;
@@ -22,7 +23,7 @@ renderMesh = function(meshArr, $parentElement) {
 
   scene.add(new THREE.AmbientLight(0x333333));
 
-  renderer.setSize(renderWidth, renderWidth/1.618);
+  renderer.setSize(renderWidth, renderHeight);
   renderer.setClearColor(0x90C3D4);
 
   camera.position.z = maxPos*1.5;

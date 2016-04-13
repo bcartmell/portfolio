@@ -95,7 +95,7 @@
       box-shadow: 2px 0 12px 0 #000;
       padding: 1em;
       transform: rotateY(180deg);
-      z-index: 1;
+      z-index: 2;
     }
 
     grid-panel:hover,
