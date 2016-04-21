@@ -1,6 +1,6 @@
-renderMesh = function(meshArr, $parentElement) {
+renderMesh = function(meshArr, $parentElement, callback) {
 
-  var renderWidth = $parentElement.innerWidth();
+  var renderWidth = $parentElement.innerWidth() + 1;
   var renderHeight = $parentElement.innerHeight();
 
   var renderer = new THREE.WebGLRenderer();
@@ -42,6 +42,8 @@ renderMesh = function(meshArr, $parentElement) {
   $parentElement.append(renderer.domElement);
   scene.add(model);
   render();
+
+  if (callback) callback();
 
   function makeBufferGeometry(verticesArr) {
     var geometry = new THREE.BufferGeometry();
