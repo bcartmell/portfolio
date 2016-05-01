@@ -1,5 +1,7 @@
 <sticky-footer id="sticky-footer" class="u-cf u-full-width">
-  <yield/>
+  <div class="message">
+    <yield/>
+  </div>
 
   <script>
 
@@ -24,6 +26,10 @@
   <style>
     sticky-footer {
       background: #222;
+    }
+
+    .sticky-footer .message {
+      font-size: 12px;
     }
   </style>
 </sticky-footer>

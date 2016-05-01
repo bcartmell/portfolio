@@ -1,5 +1,8 @@
 <loading-icon>
-  <i class="loading fa fa-spinner fa-spin"></i>
+  <i class="loading fa fa-spinner fa-pulse"></i>
+  <div class="message">
+    <yield />
+  </div>
 
   <style>
       loading-icon {
@@ -7,6 +10,11 @@
         display: table-cell;
         vertical-align: middle;
         font-size: 48px !important;
+      }
+      
+      loading-icon .message {
+        font-size: .3em;
+        margin-top: 1em;
       }
   </style>
 </loading-icon>

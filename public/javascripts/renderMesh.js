@@ -1,4 +1,4 @@
-renderMesh = function(meshArr, $parentElement, callback) {
+renderMesh = function(meshArr, $parentElement) {
 
   var renderWidth = $parentElement.innerWidth() + 1;
   var renderHeight = $parentElement.innerHeight();
@@ -43,8 +43,6 @@ renderMesh = function(meshArr, $parentElement, callback) {
   scene.add(model);
   render();
 
-  if (callback) callback();
-
   function makeBufferGeometry(verticesArr) {
     var geometry = new THREE.BufferGeometry();
     var vertices = new Float32Array(verticesArr.length * 3);
@@ -69,7 +67,6 @@ renderMesh = function(meshArr, $parentElement, callback) {
     light.position.y = position.y;
     light.position.z = position.z;
     scene.add(light);
-    // debugger;
   }
   function render() {
     requestAnimationFrame(render);

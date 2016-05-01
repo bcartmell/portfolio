@@ -23,10 +23,14 @@ h1 {
 }
 
 /*
- * Skeleton Overrides
+ * Overrides
  */
 .container {
   width: 90%;
+}
+
+.fa-pulse {
+  transform-origin: 49.5% 48%;
 }
 
 /*
@@ -111,9 +115,6 @@ h1 {
   transition: max-width 0.3s ease-in-out;
 }
 
-/*
- * Style broken images
- */
 img {
   position: relative;
 }
